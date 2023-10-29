@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css);
+
+*{
+    font-family: 'Roboto', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+	background: #18191A;
+	width: 100%;
+	height: 100%;
+    animation: 3s ease-in-out overflowVisible;
+}
+
+.ContactPage{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    display: inline;
+    width: 100%;
+}
+
+.ContactPage .ContactForm, .ContactPage .ContactDetails{
+    width: 45%;
+    text-align: center;
+    background-color: #242526;
+    margin: 1.25% 3.5%;
+    height: 81.5vh;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin-right: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.ContactPage .ContactForm{
+    animation: 1.5s ease-in-out slideBottom;
+}
+
+.ContactPage .ContactDetails{
+    animation: 1.5s ease-in-out slideTop;
+}
+
+.ContactPage .ContactForm form{
+    margin: 5px 10px;
+}
+
+.ContactPage .ContactForm form h3{
+    text-align: center;
+    padding: 4% 0 2%;
+    font-size: 1.75em;
+    color: #FFF;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.875em;
+    font-weight: 500;
+}
+
+.ContactPage .ContactDetails h3{
+    text-align: center;
+    padding: 4% 0 2%;
+    font-size: 1.75em;
+    color: #FFF;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.875em;
+    font-weight: 500;
+}
+
+.ContactPage .ContactForm form .ErrorBox{
+    margin: 1.25% auto;
+    height: auto;
+    background-color: #F68480;
+    border-radius: 10px;
+    opacity: 0.775;
+    border: 0.175em solid darkred;
+    padding: 5px 7.5px;
+    width: 75%;
+    margin-top: -1.625em;
+    z-index: 1;
+}
+
+.ContactPage .ContactForm form .ErrorBox .ErrorMessage{
+    letter-spacing: 0.75px;
+    margin: 2.5px 10px;
+    text-align: left;
+    color: darkred;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.ContactPage .ContactForm form textarea{
+    resize: none;
+}
+
+.ContactPage .ContactForm form textarea, .ContactPage .ContactForm form input, .ContactPage .ContactForm form button{
+    display: block;
+    padding: 0.675em 0.9em;
+    width: 75%;
+    margin: 1.25% auto;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 0.85em;
+    font-weight: 400;
+    letter-spacing: 0.125em;
+    background: rgba(250,250,250,1);
+}
+
+.ContactPage .ContactForm form button{
+    background-color: black;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    background-image: linear-gradient(to right, #e52d27 0%, #b31217  51%, #e52d27  100%);
+    transition: 0.5s;
+    background-size: 200% auto;
+    display: block;
+    padding: 0.875em 0.9em;
+}
+
+.ContactPage .ContactForm form button:hover{
+    background-position: right center;
+}
+
+.ContactPage .ContactDetails .Phone, .ContactPage .ContactDetails .Email, .ContactPage .ContactDetails .Maps, .ContactPage .ContactDetails .socialMedia{
+    background: #2D88FF;
+    width: 40%;
+    height: 27.75vh;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 2.5%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.ContactPage .ContactDetails .Phone:hover, .ContactPage .ContactDetails .Email:hover, .ContactPage .ContactDetails .Maps:hover, .ContactPage .ContactDetails .socialMedia:hover{
+    background: #263951;
+}
+
+.ContactPage .ContactDetails .Phone i, .ContactPage .ContactDetails .Email i, .ContactPage .ContactDetails .Maps i, .ContactPage .ContactDetails .socialMedia i{
+    font-size: 5em;
+    color: white;
+    margin-top: 10px;
+}
+
+.ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+    width: 75%;
+    margin: 10px 15px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-size: 0.9em;
+    border: 2px solid black;
+    color: black;
+}
+
+.ContactPage .ContactDetails .Phone button:hover, .ContactPage .ContactDetails .Email button:hover, .ContactPage .ContactDetails .Maps button:hover, .ContactPage .ContactDetails .socialMedia button:hover{
+    background: #DADEDF;
+}
+
+.ContactPage .ContactDetails .Maps, .ContactPage .ContactDetails .socialMedia{
+    margin-top: 30px;
+}
+
+.ContactPage .ContactDetails .Maps i, .ContactPage .ContactDetails .socialMedia i{
+    margin-bottom: 10px;
+}
+
+@keyframes slideBottom{
+    from{margin-top: -48.5%; opacity: 0;}
+    to{margin-top: 1.25%; opacity: 1;}
+}
+
+@keyframes slideTop{
+    from{margin-top: 100%; opacity: 0;}
+    to{margin-top: 1.25%; opacity: 1;}
+}
+
+@keyframes overflowVisible{
+    from{overflow: hidden;}
+    to{overflow: visible;}
+}
+
+@media(max-width:  1110px){
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        font-size: 0.8em;
+    }
+
+}
+
+@media(max-width:  995px){
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        font-size: 0.7em;
+    }
+
+}
+
+@media(max-width:  890px){
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        font-size: 0.65em;
+    }
+
+    .ContactPage .ContactForm form h3, .ContactPage .ContactDetails h3{
+        font-size: 1.5em;
+    }
+
+}
+
+@media(max-width:  835px){
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        font-size: 0.6em;
+    }
+
+}
+
+@media(max-width:  785px){
+
+    body{
+        overflow-x: hidden;
+        overflow-y: visible;
+    }
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        font-size: 1.1em;
+    }
+
+    .ContactPage .ContactForm, .ContactPage .ContactDetails{
+        display: block;
+        width: 93.25%;
+        height: auto;
+        padding: 20px 0;
+        animation: none;
+    }
+
+    .ContactPage .ContactForm form textarea, .ContactPage .ContactForm form input, .ContactPage .ContactForm form button{
+        margin: 2.5% auto;
+    }
+
+    .ContactPage .ContactForm form .ErrorBox{
+        margin-top: 0;
+    }
+
+}
+
+@media(max-width:  635px){
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        font-size: 0.85em;
+    }
+
+}
+
+@media(max-width:  600px){
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        display: block;
+        margin: 10px auto;
+    }
+
+}
+
+@media(max-width:  498px){
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        font-size: 0.7em;
+    }
+
+}
+
+@media(max-width:  425px){
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        font-size: 0.6em;
+    }
+
+}
+
+@media(max-width:  370px){
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        font-size: 0.55em;
+    }
+
+    .ContactPage .ContactForm form .ErrorBox .ErrorMessage{
+        font-size: 10px;
+    }
+
+}
+
+@media(max-width:  350px){
+
+    .ContactPage .ContactDetails .Phone button, .ContactPage .ContactDetails .Email button, .ContactPage .ContactDetails .Maps button, .ContactPage .ContactDetails .socialMedia button{
+        font-size: 0.5em;
+    }
+
+    .ContactPage .ContactForm form .ErrorBox .ErrorMessage{
+        font-size: 9px;
+    }
+
+}

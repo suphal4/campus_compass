@@ -1,0 +1,831 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: #18191A;
+}
+
+h3{
+  	font-weight: 900;
+    font-size: 2em;
+    letter-spacing: 0.1125em;
+}
+
+p{
+	font-size: 0.875em;
+	font-weight: 400;
+	line-height: 1.75;
+	letter-spacing: 0.1em;
+	margin: 20px 0;
+	max-width: 92.5%;
+}
+
+.container{
+	background: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	position: relative;
+	overflow: hidden;
+	width: 1125px;
+	max-width: 90%;
+	height: 575px;
+	max-height: 90%;
+	margin: 0 auto;
+}
+
+.formcontainer form{
+	background: #FFF;
+	display: flex;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.formcontainer form h5{
+	font-weight: 400;
+    font-size: 0.85em;
+    padding: 10px 0;
+    letter-spacing: 0.15em;
+    color: #606770;
+    opacity: 0.875;
+}
+
+.formcontainer form input{
+	background: rgba(var(--b3f,250,250,250),1);
+	padding: 10px 15px;
+	border: 0.175em solid #242526;
+	outline: none;
+	margin: 8px 0;
+	width: 87.5%;
+	border-radius: 10px;
+	font-size: 0.9375em;
+	letter-spacing: 0.1em;
+    transition: 0.75s;
+}
+
+.formcontainer form .ErrorBox{
+	margin: 8px 0;
+	height: auto;
+	width: 87.5%;
+	background-color: #F68480;
+	border-radius: 10px;
+	opacity: 0.775;
+	border: 0.175em solid darkred;
+	padding: 5px 7.5px !important;
+	width: 87.5%;
+}
+
+.formcontainer form .ErrorBox .ErrorMessage{
+	letter-spacing: 0.75px;
+	margin: 2.5px 10px;
+	text-align: left;
+	color: darkred;
+	font-size: 11px;
+	font-weight: 500;
+}
+
+.formcontainer form input:focus{
+	border-color: rgb(64, 26, 87);
+	transition: all 0.5s ease-in-out;
+}
+
+button{
+	border-radius: 10px;
+	border: 1px solid #242526;
+	background: #242526;
+	color: white;
+	font-size: 1em;
+	font-weight: 600;
+	width: 87.5%;
+	padding: 12px 0;
+	letter-spacing: 0.175em;
+	transition: transform 80ms ease-in;
+	cursor: pointer;
+	outline: none;
+	margin: 8px 0;
+	transition: 0.5s ease-in-out;
+    opacity: 0.95;
+}
+
+button:active{
+	transform: scale(0.5);
+}
+
+button:hover{
+	background: #18191A;
+}
+
+button.ghost{
+	padding: 12px 0;
+	width: 40%;
+	background: transparent;
+	border: 2px solid #FFF;
+}
+
+.formcontainer{
+	position: absolute;
+	top: 0;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
+}
+
+.logincontainer{
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.signupcontainer{
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.overlay-container{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+	border: none;
+	border-radius: 0 10px 10px 0;
+}
+
+.overlay{
+	background: #242526;
+	color: #FFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel{
+	position: absolute;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 40px;
+	height: 100%;
+	width: 50%;
+	text-align: center;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-right{
+	right: 0;
+	transform: translateX(0);
+}
+
+.overlay-left{
+	transform: translateX(-20%);
+}
+
+a{
+	margin: 8px 0;
+	letter-spacing: 0.075em;
+	font-size: 0.925em;
+	z-index: 10000;
+	position: relative;
+}
+
+a, a:visited{
+    color: #242526;
+}
+
+.container.right-panel-active .logincontainer{
+	transform: translateX(100%);
+}
+
+.container.right-panel-active .overlay-container{
+	border-radius: 10px 0 0 10px;
+	transform: translateX(-100%);
+}
+
+.container.right-panel-active .signupcontainer{
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+}
+
+.container.right-panel-active .overlay{
+	transform: translateX(50%);
+}
+
+.container.right-panel-active .overlay-left{
+	transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right{
+	transform: translateX(20%);
+}
+
+img{
+	position: absolute;
+    top: 82.5%;
+    width: 9em;
+    height: auto;
+}
+
+i{
+	font-size: 2.125em; 
+	padding: 15px 0;
+	cursor: pointer;
+	display: none;
+}
+
+@media (max-width: 850px){
+
+	h3{
+		font-size: 1.625em;
+    	letter-spacing: 0.0875em;
+	}
+
+	p{
+		font-size: 0.75em;
+		font-weight: 400;
+		line-height: 1.625;
+		letter-spacing: 0.175em;
+		margin: 15px 0;
+		max-width: 85%;
+	}
+
+	.formcontainer form h5{
+		font-weight: 400;
+	    font-size: 0.775em;
+	    padding: 10px 0;
+	    letter-spacing: 0.15em;
+	    color: #606770;
+	    opacity: 0.875;
+	}
+
+	button{
+		font-size: 0.825em;
+	}
+
+	.formcontainer form input{
+		font-size: 0.825em;
+		letter-spacing: 0.0975em;
+	}
+
+	a{
+		letter-spacing: 0.085em;
+		font-size: 0.75em;
+		z-index: 10000;
+	}
+
+	.formcontainer form .ErrorBox .ErrorMessage{
+		font-size: 0.535em;
+		line-height: 1.35;
+	}
+
+	.formcontainer form .ErrorBox{
+        padding: 5px 0.25px;
+    }
+
+    img{
+    	width: 8em;
+    	top: 85%;
+    }
+
+}
+
+@media (max-width: 720px){
+
+	h3{
+		font-size: 1.375em;
+    	letter-spacing: 0.0675em;
+	}
+
+	p{
+		font-size: 0.675em;
+		font-weight: 400;
+		line-height: 1.675;
+		letter-spacing: 0.15em;
+		margin: 12.5px 0;
+		max-width: 85%;
+	}
+
+	.formcontainer form h5{
+		font-weight: 400;
+	    font-size: 0.675em;
+	    padding: 10px 0;
+	    letter-spacing: 0.15em;
+	    color: #606770;
+	    opacity: 0.875;
+	}
+
+	button{
+		font-size: 0.75em;
+	}
+
+	.formcontainer form input{
+		font-size: 0.75em;
+		letter-spacing: 0.0825em;
+	}
+
+	a{
+		letter-spacing: 0.0825em;
+		font-size: 0.7em;
+		z-index: 10000;
+	}
+
+	.formcontainer form .ErrorBox .ErrorMessage{
+        font-size: 0.5275em;
+        letter-spacing: 0.05px;
+        line-height: 1.125;
+    }
+
+    .formcontainer form .ErrorBox{
+        padding: 5px 0;
+    }
+
+    img{
+    	width: 7em;
+    	top: 87.5%;
+    }
+
+}
+
+@media (max-width:  580px){
+
+	label{
+		display: none;
+	}
+
+	.logincontainer{
+		margin-top: -10.5%;
+		left: 0;
+		width: 100%;
+		z-index: 2;
+	}
+
+	.signupcontainer{
+		left: 0;
+		width: 100%;
+		opacity: 0;
+		z-index: 1;
+	}
+
+	.overlay{
+		height: 100%;
+		width: 200%;
+		transform: translateY(20%);
+		transition: transform 0.6s ease-in-out;
+	}
+
+	.overlay-container{
+		border-radius: 0 0 10px 10px;
+		position: absolute;
+		top: 65%;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		transition: transform 0.6s ease-in-out;
+		z-index: 100;
+	}
+
+	.overlay-panel{
+		height: 0;
+		margin-top: 5.25%;
+	}
+
+	.overlay-right{
+		transform: scale(0.55);
+		left: 38.5%;
+	}
+
+	.overlay-left{
+		transform: scale(0.55) !important;
+		margin-top: 541.5px;
+		left: -10.5%;
+	}
+
+	img{
+		margin-left: 200%;
+		width: 12.5em;
+		margin-top: -14.5%;
+	}
+
+	.Image{
+		width: 12.5em;
+		margin-left: 190%;
+		margin-top: -14.5%;
+	}
+
+	.container.right-panel-active .logincontainer{
+		transform: translateX(100%);
+	}
+
+	.container.right-panel-active .overlay-container{
+		border-radius: 10px 10px 0 0;
+		transform: translateY(-150.5%);
+	}
+
+	.container.right-panel-active .signupcontainer{
+		transform: translateX(0);
+		margin-top: 10.5%;
+		opacity: 1;
+		z-index: 5;
+	}
+
+	.container.right-panel-active .overlay-right{
+		transform: translateX(50%);
+	}
+
+	.container.right-panel-active .overlay-left{
+		transform: translateY(500px);
+	}
+
+	h3{
+		font-size: 2em;
+    	letter-spacing: 0.1125em;
+	}
+
+	p{
+		font-size: 0.875em;
+		font-weight: 400;
+		line-height: 1.75;
+		letter-spacing: 0.1em;
+		margin: 20px 0;
+		max-width: 92.5%;
+	}
+
+	.formcontainer form h5{
+		font-size: 0.85em;
+		letter-spacing: 0.2125em;
+		font-weight: 400;
+	    padding: 10px 0;
+	    color: #606770;
+	    opacity: 0.875;
+	}
+
+	button{
+		font-size: 1em;
+		width: 95%;
+	}
+
+	.formcontainer form input{
+		font-size: 0.9375em;
+		letter-spacing: 0.1em;
+		width: 95%;
+	}
+
+	a{
+		letter-spacing: 0.075em;
+		font-size: 0.925em;
+		z-index: 10000;
+	}
+
+	.formcontainer form .ErrorBox .ErrorMessage{
+		font-size: 11px;
+		letter-spacing: 0.75px;
+	}
+
+	.formcontainer form .ErrorBox{
+        padding: 5px 7.5px;
+        width: 95%;
+    }
+
+    .Message{
+    	display: none;
+    }
+
+    button.ghost{
+    	margin: 1.875em 0;
+    }
+
+    .Title{
+    	font-size: 1.5em;
+    }
+
+}
+
+@media (max-width: 525px){
+
+	.overlay-right{
+		top: 3.5px;
+	}
+
+	a{
+		z-index: 10000;
+	}
+
+}
+
+@media (max-width: 500px){
+
+	img{
+		margin-top: -14.5%;
+		margin-left: 197.5%;
+	}
+
+	a{
+		z-index: 10000;
+	}
+
+	.Image{
+		margin-top: -15%;
+	}
+
+	.overlay-right{
+		top: 4.5px;
+	}
+
+}
+
+@media (max-width: 480px){
+
+	img{
+		margin-top: -15.5%;
+	}
+
+	a{
+		z-index: 10000;
+	}
+
+	.Image{
+		margin-top: -16.25%;
+		margin-left: 188.75%;
+	}
+
+	.overlay-right{
+		top: 7.5px;
+	}
+
+}
+
+@media (max-width: 450px){
+	
+	img{
+		margin-top: -16.25%;
+	}
+
+	a{
+		z-index: 10000;
+	}
+
+	.Image{
+		margin-top: -16.25%;
+	}
+
+	.overlay-right{
+		top: 10px;
+	}
+
+}
+
+@media (max-width: 425px){
+
+	img{
+		margin-top: -17.5%;
+	}
+
+	a{
+		z-index: 10000;
+	}
+
+	.Image{
+		margin-top: -18.5%;
+	}
+
+	.overlay-right{
+		top: 12px;
+	}
+
+	h3{
+		font-size: 1.75em;
+	}
+
+}
+
+@media (max-width: 400px){
+
+	#AccessAccount{
+		margin-top: -3.5px;
+	}
+
+	a{
+		z-index: 10000;
+	}
+
+	img{
+		margin-top: -18.5%;
+	}
+
+	.Image{
+		margin-top: -15.125%;
+		margin-left: 151.25%;
+	}
+
+	.overlay-right{
+		top: 15px;
+	}
+
+	.overlay-left{
+		width: 60%;
+		left: -14.5%;
+	}
+
+	h3{
+		font-size: 1.5em;
+		margin-top: 20px;
+	}
+
+	#NewAccount{
+		margin-top: -5px;
+	}
+}
+
+@media (max-width: 370px){
+
+	#AccessAccount{
+		margin-top: -5px;
+	}
+
+	img{
+		margin-top: -17%;
+		margin-left: 157.5%;
+	}
+
+	.Image{
+		margin-top: -16.875%;
+	}
+
+	.overlay-right{
+		width: 60%;
+		left: 34.5%;
+		top: 17.5px;
+	}
+
+	h3{
+		font-size: 1.5em;
+    	letter-spacing: 0.1125em;
+	}
+
+	.formcontainer form h5{
+		font-size: 0.725em;
+		letter-spacing: 0.2125em;
+		font-weight: 400;
+	    padding: 10px 0;
+	    color: #606770;
+	    opacity: 0.875;
+	}
+
+	button{
+		font-size: 0.875em;
+	}
+
+	.formcontainer form input{
+		font-size: 0.875em;
+		letter-spacing: 0.1em;
+	}
+
+	a{
+		letter-spacing: 0.075em;
+		font-size: 0.875em;
+		z-index: 10000;
+	}
+
+	.formcontainer form .ErrorBox .ErrorMessage{
+		font-size: 0.625em;
+		letter-spacing: 0.75px;
+	}
+
+	.formcontainer form .ErrorBox{
+        padding: 5px 7.5px;
+    }
+
+}
+
+@media (max-width: 340px){
+
+	#AccessAccount{
+		margin-top: -10px;
+	}
+
+	h3{
+		font-size: 1.275em;
+    	letter-spacing: 0.1125em;
+	}
+
+	.formcontainer form h5{
+		font-size: 0.625em;
+		letter-spacing: 0.2em;
+		font-weight: 400;
+	    padding: 10px 0;
+	    color: #606770;
+	    opacity: 0.875;
+	}
+
+	button{
+		font-size: 0.775em;
+	}
+
+	.formcontainer form input{
+		font-size: 0.775em;
+		letter-spacing: 0.075em;
+	}
+
+	a{
+		letter-spacing: 0.075em;
+		font-size: 0.775em;
+		z-index: 10000;
+	}
+
+	.formcontainer form .ErrorBox .ErrorMessage{
+		font-size: 9.275px;
+		letter-spacing: 0.5px;
+	}
+
+	.formcontainer form .ErrorBox{
+        padding: 5px 7.5px;
+    }
+
+}
+
+@media (max-width: 335px){
+
+	#AccessAccount{
+		margin-top: -5px;
+	}
+	
+	.overlay-left{
+		width: 65%;
+		left: -15.5%;
+	}
+	
+	.Image{
+		width: 11em;
+		margin-top: -14.5%;
+		margin-left: 130%;
+	}
+
+	#NewAccount{
+		margin-top: 8.75px;
+	}
+	
+}
+
+@media (max-width: 320px){
+
+	.Image{
+		margin-top: -15.5%;
+		margin-right: 20px;
+	}
+
+	img{
+		width: 11em;
+		margin-top: -14.5%;
+		margin-left: 138.25%;
+	}
+
+	.overlay-right{
+		width: 65%;
+		left: 33.25%;
+	}
+
+	h3{
+		font-size: 1em;
+		margin-top: 30px;
+	}
+
+	.Title{
+		margin-top: -5px;
+	}
+
+	#NewAccount{
+		margin-top: 10px;
+	}
+
+	#AccessAccount{
+		font-size: 1.2em;
+	}
+
+}
